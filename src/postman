@@ -1,0 +1,347 @@
+ //=============== 1 ================
+ //get-trending
+
+ //https://api.themoviedb.org/3/trending/movie/day?api_key=70f59e22c7b6a563dca5a024c7d2f94b
+
+ {
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/xwA90BwZXTh8ke3CVsQlj8EOkFr.jpg",
+          "id": 948713,
+          "title": "The Last Kingdom: Seven Kings Must Die",
+          "original_language": "en",
+          "original_title": "The Last Kingdom: Seven Kings Must Die",
+          "overview": "In the wake of King Edward's death, Uhtred of Bebbanburg and his comrades adventure across a fractured kingdom in the hopes of uniting England at last.",
+          "poster_path": "/xUvSeFhdsJbKFOaHnB9TeTZpJKs.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+              28,
+              12,
+              36,
+              18,
+              10752
+          ],
+          "popularity": 115.105,
+          "release_date": "2023-04-14",
+          "video": false,
+          "vote_average": 7.478,
+          "vote_count": 93
+      },
+ //..................................
+      {
+          "adult": false,
+          "backdrop_path": "/vL5LR6WdxWPjLPFRLe133jXWsh5.jpg",
+          "id": 19995,
+          "title": "Avatar",
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "poster_path": "/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
+          "media_type": "movie",
+          "genre_ids": [
+              28,
+              12,
+              14,
+              878
+          ],
+          "popularity": 330.44,
+          "release_date": "2009-12-15",
+          "video": false,
+          "vote_average": 7.569,
+          "vote_count": 28895
+      }
+  ],
+  "total_pages": 1000,
+  "total_results": 20000
+}
+
+
+// =========== 2 ============
+
+// search-movies 
+// https://api.themoviedb.org/3/search/movie?api_key=70f59e22c7b6a563dca5a024c7d2f94b&language=en-US&page=1&include_adult=false
+
+{
+  "page": 1,
+  "results": [],
+  "total_pages": 1,
+  "total_results": 0
+}
+
+// =============== 3 =================================
+
+// get-movie-details
+//https://api.themoviedb.org/3/movie/{movie_id}?api_key= 70f59e22c7b6a563dca5a024c7d2f94b &language=en-US
+// movie_id=508
+
+{
+  "adult": false,
+  "backdrop_path": "/xUWf5xX0AnZgAnYXAMk03zTbsef.jpg",
+  "belongs_to_collection": null,
+  "budget": 40000000,
+  "genres": [
+      {
+          "id": 35,
+          "name": "Comedy"
+      },
+      {
+          "id": 10749,
+          "name": "Romance"
+      },
+      {
+          "id": 18,
+          "name": "Drama"
+      }
+  ],
+  "homepage": "http://www.loveactually.com/",
+  "id": 508,
+  "imdb_id": "tt0314331",
+  "original_language": "en",
+  "original_title": "Love Actually",
+  "overview": "Eight London couples try to deal with their relationships in different ways. Their tryst with love makes them discover how complicated relationships can be.",
+  "popularity": 21.15,
+  "poster_path": "/7QPeVsr9rcFU9Gl90yg0gTOTpVv.jpg",
+  "production_companies": [
+      {
+          "id": 10163,
+          "logo_path": "/16KWBMmfPX0aJzDExDrPxSLj0Pg.png",
+          "name": "Working Title Films",
+          "origin_country": "GB"
+      },
+      {
+          "id": 284,
+          "logo_path": null,
+          "name": "DNA Films",
+          "origin_country": "GB"
+      },
+      {
+          "id": 33,
+          "logo_path": "/8lvHyhjr8oUKOOy2dKXoALWKdp0.png",
+          "name": "Universal Pictures",
+          "origin_country": "US"
+      },
+      {
+          "id": 694,
+          "logo_path": "/5LEHONGkZBIoWvp1ygHOF8iyi1M.png",
+          "name": "StudioCanal",
+          "origin_country": "FR"
+      }
+  ],
+  "production_countries": [
+      {
+          "iso_3166_1": "FR",
+          "name": "France"
+      },
+      {
+          "iso_3166_1": "GB",
+          "name": "United Kingdom"
+      }
+  ],
+  "release_date": "2003-09-07",
+  "revenue": 244931766,
+  "runtime": 135,
+  "spoken_languages": [
+      {
+          "english_name": "English",
+          "iso_639_1": "en",
+          "name": "English"
+      },
+      {
+          "english_name": "French",
+          "iso_639_1": "fr",
+          "name": "Français"
+      },
+      {
+          "english_name": "Portuguese",
+          "iso_639_1": "pt",
+          "name": "Português"
+      }
+  ],
+  "status": "Released",
+  "tagline": "The Ultimate Romantic Comedy.",
+  "title": "Love Actually",
+  "video": false,
+  "vote_average": 7.103,
+  "vote_count": 5887
+}
+
+
+//============== 4 ===================
+// get-movie-credits
+// https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=70f59e22c7b6a563dca5a024c7d2f94b&language=en-US
+// {movie_id}=508
+
+
+{
+  "id": 508,
+  "cast": [
+      {
+          "adult": false,
+          "gender": 2,
+          "id": 4566,
+          "known_for_department": "Acting",
+          "name": "Alan Rickman",
+          "original_name": "Alan Rickman",
+          "popularity": 15.172,
+          "profile_path": "/7tADZs4ILE93oJ5pAh6mKQFEq2m.jpg",
+          "cast_id": 33,
+          "character": "Harry",
+          "credit_id": "52fe424bc3a36847f8013391",
+          "order": 0
+      },
+      {
+          "adult": false,
+          "gender": 2,
+          "id": 2440,
+          "known_for_department": "Acting",
+          "name": "Bill Nighy",
+          "original_name": "Bill Nighy",
+          "popularity": 45.671,
+          "profile_path": "/ixFI2YCGNGJfwlpI8iyhvVZRg8C.jpg",
+          "cast_id": 15,
+          "character": "Billy Mack",
+          "credit_id": "52fe424bc3a36847f8013351",
+          "order": 1
+      },
+      {
+          "adult": false,
+          "gender": 2,
+          "id": 5472,
+          "known_for_department": "Acting",
+          "name": "Colin Firth",
+          "original_name": "Colin Firth",
+          "popularity": 19.278,
+          "profile_path": "/z6wxnkqSTnzO1tcBui0ss7ehdm9.jpg",
+          "cast_id": 18,
+          "character": "Jamie Bennett",
+          "credit_id": "52fe424bc3a36847f8013359",
+          "order": 2
+      },
+      {
+          "adult": false,
+          "gender": 1,
+          "id": 7056,
+          "known_for_department": "Acting",
+          "name": "Emma Thompson",
+          "original_name": "Emma Thompson",
+          "popularity": 19.424,
+          "profile_path": "/zQ0hWHh3tzaOOziPbABQI8s9WCu.jpg",
+          "cast_id": 21,
+          "character": "Karen",
+          "credit_id": "52fe424bc3a36847f8013365",
+          "order": 3
+      },
+  ],
+  "crew": [
+      {
+          "adult": false,
+          "gender": 1,
+          "id": 498,
+          "known_for_department": "Costume & Make-Up",
+          "name": "Joanna Johnston",
+          "original_name": "Joanna Johnston",
+          "popularity": 1.7,
+          "profile_path": "/xuCe7ZgtqOCaY6MUvXpG7buckXO.jpg",
+          "credit_id": "52fe424bc3a36847f8013335",
+          "department": "Costume & Make-Up",
+          "job": "Costume Design"
+      },
+      {
+          "adult": false,
+          "gender": 1,
+          "id": 668,
+          "known_for_department": "Production",
+          "name": "Mary Selway",
+          "original_name": "Mary Selway",
+          "popularity": 5.753,
+          "profile_path": "/9dP8WP2KF9TERPLQkaXDwzi3Tjc.jpg",
+          "credit_id": "52fe424bc3a36847f801332f",
+          "department": "Production",
+          "job": "Casting"
+      },
+      {
+          "adult": false,
+          "gender": 2,
+          "id": 1253,
+          "known_for_department": "Art",
+          "name": "Jim Clay",
+          "original_name": "Jim Clay",
+          "popularity": 1.143,
+          "profile_path": null,
+          "credit_id": "59b88ea8c3a36813e5007c4e",
+          "department": "Art",
+          "job": "Production Design"
+      },
+      {
+          "adult": false,
+          "gender": 1,
+          "id": 2635,
+          "known_for_department": "Production",
+          "name": "Shaheen Baig",
+          "original_name": "Shaheen Baig",
+          "popularity": 0.862,
+          "profile_path": null,
+          "credit_id": "5cc9acd00e0a264ef4f32ac3",
+          "department": "Production",
+          "job": "Casting"
+      },
+      {
+          "adult": false,
+          "gender": 2,
+          "id": 2236,
+          "known_for_department": "Production",
+          "name": "Tim Bevan",
+          "original_name": "Tim Bevan",
+          "popularity": 2.278,
+          "profile_path": "/nyeqZJr6QVwD3iuLgK5vRgIdcmP.jpg",
+          "credit_id": "52fe424bc3a36847f8013311",
+          "department": "Production",
+          "job": "Producer"
+      },
+  ]
+}
+
+// ============= 5 ===========
+// get-movie-reviews
+// https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=70f59e22c7b6a563dca5a024c7d2f94b&language=en-US&page=1
+// {movie_id}=508
+
+
+{
+  "id": 508,
+  "page": 1,
+  "results": [
+      {
+          "author": "John Chard",
+          "author_details": {
+              "name": "",
+              "username": "John Chard",
+              "avatar_path": "/utEXl2EDiXBK6f41wCLsvprvMg4.jpg",
+              "rating": 8.0
+          },
+          "content": "God only knows what I'd be without you.\r\n\r\nLondon, England, and it's the run up to Christmas, and we are in the company of a number of couples dealing with the joys and problems that love can bring.\r\n\r\nWe open with a narration from Hugh Grant who tells us that when he is troubled by the hate in the world, he thinks of the arrivals area of Heathrow airport. A place where loved ones greet returning loved ones, a place that indeed showcases a strand of love in its joyous form. He further ventures that when the aeroplanes hit the twin towers on 9/11, as far as he knows, all those phone calls from those sadly involved were messages of love, not hate. Pertinent musings that although somewhat sombre for an opening, sets it up nicely for what Richard Curtis (writer and director) wants to say.\r\n\r\nA roll call of fine British and Irish actors, and American Laura Linney, lend their considerable talents to Curtis' ensemble piece. The structure is surprisingly simple considering the number of stories being woven together, the result being that there is sure to be a story in there to either love, or, yes, even hate. Is it sentimental? Of course. Is it as stuffed as a turkey on Xmas day? Naturally. Does it stretch credibility in some strands? For sure. But only the coldest of hearts could truly decry that Love Actually is all around. Very often it's funny too. Curtis, following on from writing credits such as Four Weddings And A Funeral, continues to show himself to be a very fine writer of comedy. None more so than with Bill Nighy's past his sell by date pop star, Billy Mack. There's something for everyone in here, indeed there's likely to be something that many can associate with.\r\n\r\nIt's a lovely affecting film that should hopefully perk up those that get blue around the holiday season. With perceptive writing, some excellent acting (Nighy, Emma Thomson, Colin Firth et al) and a soundtrack of some worth, Love Actually is a winner. 8/10",
+          "created_at": "2015-12-27T23:26:00.084Z",
+          "id": "5680738892514131df00bd2d",
+          "updated_at": "2021-06-23T15:57:41.968Z",
+          "url": "https://www.themoviedb.org/review/5680738892514131df00bd2d"
+      },
+      {
+          "author": "Peter McGinn",
+          "author_details": {
+              "name": "Peter McGinn",
+              "username": "narrator56",
+              "avatar_path": "/tVbrLJzA2RwRlE7dJLJG54UsAkq.jpg",
+              "rating": 7.0
+          },
+          "content": "Love Actually coulda been somebody; it coulda been a contender. There were scenes and characters I loved, but the movie was all but ruined by the irritatingly bad bits.  They could have dropped two entire  subplots and raised the quality considerably: I am thinking pf the needlessly crass over the hill singer with the Christmas song competition, and the male fantasy thread about the idiot going to Wisconsin and encountering three shapely nymphomaniacs. The time saved cutting those scenes could have been allocated to Laura Linney’s special needs brother and her infatuation, a plot that just petered out near the end, and to the Emma Thompson character’s marriage, which showed promise but similarly fizzled out with a half-hearted scene at the end. Or they could have given more screen time to Natalie, the prime minister’s love interest, who stole a few scenes and deserved many more.\r\n\r\nSo it was fun in places and touching at other times, and I can just about see myself watching this star-studded near-miss again, as long as I can keep a finger on the fast forward button.",
+          "created_at": "2021-07-27T21:23:29.582Z",
+          "id": "61007951a84a47002564f9f5",
+          "updated_at": "2021-07-27T21:23:29.582Z",
+          "url": "https://www.themoviedb.org/review/61007951a84a47002564f9f5"
+      },
+    ],
+    "total_pages": 1,
+    "total_results": 3
+}
