@@ -4,29 +4,16 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const SearchMovies = (createSearchMovies) => {
-  const [movies, setMovies] = useState([]);
-  const [value, setValue] = useState('');
+const SearchMovies = createSearchMovies => {
+  const [movies, setMovies] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const movie = searchParams.get('movie' ?? '');
 
   const location = useLocation();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const movie = searchParams.get('movie') ?? '';
-
-  const updateQueryString = evt => {
-    const value = evt.target.value;
-    if (value === '') {
-      return setSearchParams({});
-    }
-
-    setSearchParams({
-      movie: value,
-    });
-  };
-
-
   useEffect(() => {
+    if (!movie) return;
+
     const API_KEY = '70f59e22c7b6a563dca5a024c7d2f94b';
     const BASE_URL = 'https://api.themoviedb.org/3/';
     const getSearchMovies = () => {
@@ -38,32 +25,48 @@ const SearchMovies = (createSearchMovies) => {
             return res.json();
           }
         })
-        .then(res => setMovies(res.results))
+        .then(res => {
+          if (!res.results.length) {
+            toast.error(
+              "We don't have any movies matching this search. Try again..."
+            );
+            return;
+          } else {
+            setMovies(res.results);
+          }
+        })
         .catch(error => toast.error(`${error.message}`));
     };
 
     getSearchMovies();
   }, [movie]);
 
-
-
   const handleSubmit = e => {
     e.preventDefault();
 
-    setValue('');
+    if (e.target.elements.text.value === '') {
+      toast.info('Enter the title of the movie');
+      return;
+    }
+
+    const form = e.currentTarget;
+    setSearchParams({ movie: form.elements.text.value.trim() });
+
+    form.reset();
   };
 
   return (
     <>
       <div className="container-fluid">
-        <form className="d-flex m-5" role="search" onSubmit={handleSubmit}>
+        <form className="d-flex m-5" onSubmit={handleSubmit}>
           <input
             className="form-control me-2"
-            type="search"
-            placeholder="Search"
+            type="text"
+            name="text"
             aria-label="Search"
-            value={movie}
-            onChange={updateQueryString}
+            aria-describedby="button-addon2"
+            placeholder="Search"
+            autoFocus
           />
           <button className="btn btn-outline-secondary" type="submit">
             Search
@@ -71,8 +74,7 @@ const SearchMovies = (createSearchMovies) => {
         </form>
       </div>
 
-      {/* {value === '' && <p>Enter the title of the movie.</p>} */}
-      {movies.length > 0 && (
+      {movies && (
         <ul className="list-group list-group-flush m-5">
           {movies.map(({ id, title }) => (
             <Link
@@ -85,11 +87,6 @@ const SearchMovies = (createSearchMovies) => {
             </Link>
           ))}
         </ul>
-      )}
-      {value !== movie && (
-        <p className="m-5">
-          We don't have any movies matching this search. Try again...
-        </p>
       )}
     </>
   );
