@@ -1,10 +1,17 @@
 .footer {
-  background-color: rgba(84, 87, 88, 0.871);
+  background-color: rgba(93, 95, 100, 0.871);
   color: white;
   font-size: 14px;
   padding: 20px;
   text-align: center;
+
   font-weight: bold;
-  height: 100px;
+  height: 100%;
   width: 100%;
+
+  /* position: absolute;
+  bottom: 0; */
+  /* height: 58px; */
+  /* margin-top: 600px; */
+  margin-bottom: 0;
 }
