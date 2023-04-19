@@ -4,7 +4,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const SearchMovies = () => {
+const SearchMovies = (createSearchMovies) => {
   const [movies, setMovies] = useState([]);
   const [value, setValue] = useState('');
 
@@ -13,6 +13,18 @@ const SearchMovies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const movie = searchParams.get('movie') ?? '';
+
+  const updateQueryString = evt => {
+    const value = evt.target.value;
+    if (value === '') {
+      return setSearchParams({});
+    }
+
+    setSearchParams({
+      movie: value,
+    });
+  };
+
 
   useEffect(() => {
     const API_KEY = '70f59e22c7b6a563dca5a024c7d2f94b';
@@ -33,16 +45,7 @@ const SearchMovies = () => {
     getSearchMovies();
   }, [movie]);
 
-  const updateQueryString = evt => {
-    const value = evt.target.value;
-    if (value === '') {
-      return setSearchParams({});
-    }
 
-    setSearchParams({
-      movie: value,
-    });
-  };
 
   const handleSubmit = e => {
     e.preventDefault();
