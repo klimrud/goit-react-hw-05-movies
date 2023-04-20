@@ -9,3 +9,34 @@ export const getTrending = () => {
     }
   });
 };
+
+export const getReviews = movieId => {
+  return fetch(
+    `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+  ).then(res => {
+    if (res.ok) {
+      return res.json();
+    }
+  });
+};
+
+export const getDetails = (movieId) => {
+  return fetch(
+    `${BASE_URL}movie/${movieId}?api_key=${API_KEY}&language=en-US`
+  )
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      }
+    })
+};
+
+export const getMovieCredits = movieId => {
+  return fetch(
+    `${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+  ).then(res => {
+    if (res.ok) {
+      return res.json();
+    }
+  });
+};

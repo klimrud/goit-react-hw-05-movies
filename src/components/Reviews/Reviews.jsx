@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getReviews } from 'services/get-movie-reviews-api';
+import { getReviews } from 'services/get-trending-api';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

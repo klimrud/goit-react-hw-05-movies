@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieCredits } from 'services/get-movie-credits-api';
+import { getMovieCredits } from 'services/get-trending-api';
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

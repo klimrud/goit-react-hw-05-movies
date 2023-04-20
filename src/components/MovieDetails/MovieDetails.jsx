@@ -3,7 +3,7 @@ import React, { lazy, useEffect, useRef, useState } from 'react';
 import { TiArrowBack } from 'react-icons/ti';
 
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { getDetails } from 'services/get-movie-details-api';
+import { getDetails } from 'services/get-trending-api';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
