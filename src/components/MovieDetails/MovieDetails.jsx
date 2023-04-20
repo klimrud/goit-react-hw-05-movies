@@ -3,6 +3,7 @@ import React, { lazy, useEffect, useRef, useState } from 'react';
 import { TiArrowBack } from 'react-icons/ti';
 
 import { Link, useLocation, useParams } from 'react-router-dom';
+import { getDetails } from 'services/get-movie-details-api';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,23 +21,9 @@ const MovieDetails = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    const API_KEY = '70f59e22c7b6a563dca5a024c7d2f94b';
-    const BASE_URL = 'https://api.themoviedb.org/3/';
-
-    const getTrending = () => {
-      return fetch(
-        `${BASE_URL}movie/${movieId}?api_key=${API_KEY}&language=en-US`
-      )
-        .then(res => {
-          if (res.ok) {
-            return res.json();
-          }
-        })
-        .then(res => setResults(res))
-        .catch(error => toast.error(`${error.message}`));
-    };
-
-    getTrending();
+    getDetails(movieId)
+      .then(res => setResults(res))
+      .catch(error => toast.error(`We don't have any details for this movie.`));
   }, [movieId]);
 
   const { title, runtime, overview, genres, poster_path } = results;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { getReviews } from 'services/get-movie-reviews-api';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,23 +10,9 @@ const Reviews = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    const API_KEY = '70f59e22c7b6a563dca5a024c7d2f94b';
-    const BASE_URL = 'https://api.themoviedb.org/3/';
-
-    const getReviews = () => {
-      return fetch(
-        `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
-      )
-        .then(res => {
-          if (res.ok) {
-            return res.json();
-          }
-        })
-        .then(res => setReviews(res.results))
-        .catch(error => toast.error(`${error.message}`));
-    };
-
-    getReviews();
+    getReviews(movieId)
+      .then(res => setReviews(res.results))
+      .catch(error => toast.error(`We don't have any reviews for this movie.`));
   }, [movieId]);
 
   return (

@@ -34,7 +34,7 @@ const defaultImage = 'https://via.placeholder.com/348x522?text=no+photo';
                 <h5 className="card-title">Genres: </h5>
 
                 <p className="card-text">
-                  {genres.map(genre => genre.name).join(' ')}
+                  {genres.map(genre => genre.name).join(', ')}
                 </p>
               </div>
             </div>

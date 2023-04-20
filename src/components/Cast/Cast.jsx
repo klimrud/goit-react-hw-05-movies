@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { getMovieCredits } from 'services/get-movie-credits-api';
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BASE_IMG_URL = 'http://image.tmdb.org/t/p/';
 const LOGO_SIZE = 'w154';
@@ -11,27 +15,10 @@ const Cast = () => {
   const { movieId } = useParams();
 
   useEffect(() => {
-    const API_KEY = '70f59e22c7b6a563dca5a024c7d2f94b';
-    const BASE_URL = 'https://api.themoviedb.org/3/';
-
-    const getTrending = () => {
-      return (
-        fetch(
-          `${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
-        )
-          .then(res => {
-            if (res.ok) {
-              return res.json();
-            }
-          })
-          .then(res => setCasts(res.cast))
-          .catch(error => console.log('error', error))
-      );
-    };
-
-    getTrending();
+    getMovieCredits(movieId)
+      .then(res => setCasts(res.cast))
+      .catch(error => toast.error(`We don't have any cast for this movie.`));
   }, [movieId]);
-
 
   return (
     <div className="card ">
